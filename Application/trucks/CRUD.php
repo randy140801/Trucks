@@ -18,6 +18,7 @@ function add(){
         else {
             $message = "Debe seleccionar una imagen para su camion";
             echo "<script type='text/javascript'>alert('$message');</script>";
+            redirect('AddEdit.php');
         }
 }
 
