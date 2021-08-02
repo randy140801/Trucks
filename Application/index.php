@@ -1,3 +1,8 @@
+<?php
+if(isset($_COOKIE["ID"])){
+    redirect('trucks/trucks.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
