@@ -1,6 +1,7 @@
 <?php
 if(isset($_COOKIE["ID"])){
-    redirect('trucks/trucks.php');
+    header("Location: trucks/trucks.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>
