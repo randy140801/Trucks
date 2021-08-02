@@ -2,66 +2,53 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<title>PHP Application</title>
-	<link href="css/site.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Camiones</title>
 </head>
 
 <body>
-<div class="main-container">
-        <div class="cloud-image">
-            <img src="img/successCloudNew.svg" alt="successCloudNew" />
-        </div>
-        <div class="content">
-            <div class="tweet-container">
-            <a href="http://twitter.com/intent/tweet/?text=I%20just%20created%20a%20new%20PHP%20website%20on%20Azure%20using%20Github%20Actions&hashtags=GithubActions%20%40Azure">
-                <img src="img/tweetThis.svg" alt="tweetThis" />
-            </a>
-        </div>
-            <div class="content-body">
-                <div class="success-text">Success!</div>
-                <div class="description line-1">
-				<?php
-				echo "Your Github Repository with Github Actions has been successfully setup";
-				?>
-				</div>
-                <div class="description line-2">
-				<?php
-				$appType = "PHP";
-				echo "Your $appType app is up and running on Azure";
-				?>
-				</div>
-                <div class="next-steps-container">
-                    <div class="next-steps-header">Next up</div>
-                    <div class="next-steps-body">
-                        <div class="step">
-                            <div class="step-icon">
-                                <img src="img/cloneWhite.svg" alt="cloneWhite" >
-                            </div>
-                            <div class="step-text"><a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">Clone your code repository and start developing your application on IDE of your choice</a></div>
-                        </div>
-                        <div class="step">
-                            <div class="step-icon">
-                                <img src="img/deployWhite.svg" alt="deployWhite">
-                            </div>
-                            <div class="step-text"><a href="https://docs.github.com/en/actions">View your CI/CD pipeline on Github and customize it as per your needs</a></div>
-                        </div>
-                        <div class="step">
-                            <div class="step-icon">
-                                <img src="img/stackWhite.svg" alt="stackWhite">
-                            </div>
-                            <div class="step-text"><a href="http://portal.azure.com">View your service stack in the Azure Portal</a></div>
-                        </div>
-                        <div class="step">
-                            <div class="step-icon">
-                                <img src="img/lightbulbWhite.svg" alt="lightbulbWhite">
-                            </div>
-                            <div class="step-text"><a href="https://docs.github.com">Learn more about all you can do with Github by visiting the documentation</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="auth.php" method="POST">
+			<h1>Crea una cuenta</h1><br>
+			<input name="nombre" type="text" placeholder="Nombre" />
+			<input name="correo" type="email" placeholder="Correo" />
+			<input name="clave" type="password" placeholder="Contraseña" /><br>
+			<button type="submit">Registrate</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="auth.php" method="POST">
+			<h1>Inicia sesion</h1><br>
+			<input name="correo" type="email" placeholder="Correo" />
+			<input name="clave" type="password" placeholder="Contraseña" /><br>
+			<button type="submit">Iniciar sesion</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Bienvenido otra vez!</h1>
+				<p>Para manterte conectado con nosotros inicia sesion con tu informacion personal y de tu seguridad nos encargamos nosotros.</p>
+				<button class="ghost" id="signIn">Inicia sesion</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hey, que tal!</h1>
+				<p>Registrate con tus datos y empieza a registrar tus camiones.</p>
+				<button class="ghost" id="signUp">Registrate</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="js/auth.js"></script>
+
 </body>
+
 </html>
